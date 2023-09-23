@@ -4,13 +4,6 @@
     name: dhcp-server
     state: latest
 
-- name: libera dhcp
-  ansible.posix.firewalld:
-    service: dhcp
-    permanent: true
-    immediate: true
-    state: enabled
-
 - name: lendo csv
   community.general.read_csv:
     path: files/hosts.csv
@@ -27,3 +20,10 @@
     name: dhcpd
     state: started
     enabled: yes
+
+- name: libera dhcp
+  ansible.posix.firewalld:
+    service: dhcp
+    permanent: true
+    immediate: true
+    state: enabled
