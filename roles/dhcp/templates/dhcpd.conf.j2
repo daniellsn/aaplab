@@ -5,7 +5,7 @@ max-lease-time 7200;
 
 subnet {{ network }} netmask {{ netmask }} {
   range {{ ip_inicial }} {{ ip_final }};
-  option domain-name-servers 8.8.8.8;
+  option domain-name-servers {{ nameserver }};
 }
 
 {% for host in hosts.list %}

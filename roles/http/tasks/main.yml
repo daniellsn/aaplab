@@ -20,8 +20,15 @@
   notify:
     - restart httpd
 
+- name: Verificando firewalld
+  ansible.builtin.service:
+    name: firewalld
+    state: started
+    enabled: yes
+
 - name: libera trafego http
   ansible.posix.firewalld:
     service: http
     permanent: true
+    immediate: true
     state: enabled

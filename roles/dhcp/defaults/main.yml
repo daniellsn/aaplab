@@ -3,3 +3,4 @@ network: 10.195.64.0
 netmask: 255.255.240.0
 ip_inicial: 10.195.64.200
 ip_final: 10.195.64.210
+nameserver: 8.8.8.8

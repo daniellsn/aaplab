@@ -4,7 +4,7 @@
     name: dhcp-server
     state: latest
 
-- name: lendo csv
+- name: Lendo hosts.csv
   community.general.read_csv:
     path: hosts.csv
   register: hosts
@@ -18,6 +18,12 @@
 - name: Iniciar o servico e habilitar no boot
   ansible.builtin.service:
     name: dhcpd
+    state: started
+    enabled: yes
+
+- name: Verificando firewalld
+  ansible.builtin.service:
+    name: firewalld
     state: started
     enabled: yes
 
