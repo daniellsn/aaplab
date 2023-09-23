@@ -1,0 +1,21 @@
+---
+- name: Instalando Apache
+  ansible.builtin.dnf:
+    name: httpd
+    state: latest
+
+- name: Iniciar o servico e habilitar no boot
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: Copiando Index
+  ansible.builtin.copy:
+    src: files/index.html
+    dest: /var/www/html
+    owner: apache
+    group: apache
+    mode: '0644'
+  notify:
+    - restart httpd

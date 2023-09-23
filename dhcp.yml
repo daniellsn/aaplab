@@ -1,0 +1,6 @@
+---
+- name: DHCP
+  hosts: all
+
+  roles:
+    - dhcp
