@@ -4,12 +4,6 @@
     name: dhcp-server
     state: latest
 
-- name: Iniciar o servico e habilitar no boot
-  ansible.builtin.service:
-    name: dhcpd
-    state: started
-    enabled: yes
-
 - name: libera dhcp
   ansible.posix.firewalld:
     service: dhcp
@@ -27,3 +21,9 @@
   ansible.builtin.template:
     src: templates/dhcpd.conf.j2
     dest: /etc/dhcp/dhcpd.conf
+
+- name: Iniciar o servico e habilitar no boot
+  ansible.builtin.service:
+    name: dhcpd
+    state: started
+    enabled: yes
