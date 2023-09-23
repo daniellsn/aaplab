@@ -1,0 +1,15 @@
+default-lease-time 600;
+max-lease-time 7200;
+
+authoritative;
+
+subnet {{ network }} netmask {{ netmask }} {
+  range {{ ip_inicial }} {{ ip_final }};
+}
+
+{% for host in hosts %}
+host {{ host['HOSTNAME'] }} {
+	hardware ethernet {{ host['MAC'] }};
+	fixed-address {{ HOST['IP'] }};
+}
+{% endfor %}

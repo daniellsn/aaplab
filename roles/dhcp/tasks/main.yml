@@ -16,3 +16,14 @@
     permanent: true
     immediate: true
     state: enabled
+
+- name: lendo csv
+  community.general.read_csv:
+    path: files/hosts.csv
+  register: hosts
+  delegate_to: localhost
+
+- name: Criando o arquivo dhcp.conf
+  ansible.builtin.template:
+    src: templates/dhcpd.conf.j2
+    dest: /etc/dhcp/dhcpd.conf

@@ -1,0 +1,5 @@
+---
+network: 10.0.0.0
+netmask: 255.255.255.0
+ip_inicial: 10.0.0.10
+ip_final: 10.0.0.20
