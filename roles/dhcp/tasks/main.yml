@@ -1,7 +1,7 @@
 ---
 - name: Instalando DHCP Server
   ansible.builtin.dnf:
-    name: dhcpd-server
+    name: dhcp-server
     state: latest
 
 - name: Iniciar o servico e habilitar no boot
