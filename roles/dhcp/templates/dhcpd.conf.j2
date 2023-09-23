@@ -10,6 +10,6 @@ subnet {{ network }} netmask {{ netmask }} {
 {% for host in hosts.list %}
 host {{ host['HOSTNAME'] }} {
 	hardware ethernet {{ host['MAC'] }};
-	fixed-address {{ HOST['IP'] }};
+	fixed-address {{ host['IP'] }};
 }
 {% endfor %}
