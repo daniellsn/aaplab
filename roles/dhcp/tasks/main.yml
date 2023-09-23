@@ -6,9 +6,9 @@
 
 - name: lendo csv
   community.general.read_csv:
-    path: /tmp/hosts.csv
+    path: hosts.csv
   register: hosts
-#  delegate_to: localhost
+  delegate_to: localhost
 
 - name: Criando o arquivo dhcp.conf
   ansible.builtin.template:
