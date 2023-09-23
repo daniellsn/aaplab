@@ -6,7 +6,7 @@
 
 - name: lendo csv
   community.general.read_csv:
-    path: files/hosts.csv
+    path: /tmp/hosts.csv
   register: hosts
   delegate_to: localhost
 
