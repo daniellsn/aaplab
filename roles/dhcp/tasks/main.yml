@@ -23,15 +23,15 @@
     state: started
     enabled: yes
 
-- name: Verificando firewalld
-  ansible.builtin.service:
-    name: firewalld
-    state: started
-    enabled: yes
+#- name: Verificando firewalld
+#  ansible.builtin.service:
+#    name: firewalld
+#    state: started
+#    enabled: yes
 
-- name: libera dhcp
-  ansible.posix.firewalld:
-    service: dhcp
-    permanent: true
-    immediate: true
-    state: enabled
+#- name: libera dhcp
+#  ansible.posix.firewalld:
+#    service: dhcp
+#    permanent: true
+#    immediate: true
+#    state: enabled
